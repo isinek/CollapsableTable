@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Collapsable tables demo</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/css.min.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+	<script src="./js/js.min.js"></script>
+	
+	<style>
+		section.container > .row {
+			margin-bottom: 25px;
+		}
+
+		section.container > .row > div {
+			text-align: center;
+		}
+
+		h2 {
+			text-align: left;
+		}
+
+		#btnExpand {
+			padding: 10px;
+		}
+
+		#notStaticDemoTable {
+			width: auto;
+		}
+
+		#notStaticDemoTable th,
+		#notStaticDemoTable td {
+			padding: 10px;
+		}
+	</style>
+
+	<script>
+		jQuery(function (){
+			jQuery('#simpleDemoTable').collapsableTable();
+			jQuery('#simpleCollapsedDemoTable').collapsableTable({
+				collapsed: true
+			});
+			jQuery('#externButtonDemoTable').collapsableTable({
+				btn: jQuery('#btnExpand')
+			});
+			jQuery('#notStaticDemoTable').collapsableTable({
+				static: false
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<section class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				<h1>Collapsable tables</h1>
+			</div>
+		</div>
+		<div class="row">
+			<h2>Simple collapsable table</h2>
+			<div class="col-xl-12">
+				<table id="simpleDemoTable" class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th colspan="10">Click to collapse/expand</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>4</td>
+							<td>6</td>
+							<td>8</td>
+							<td>10</td>
+							<td>12</td>
+							<td>14</td>
+							<td>16</td>
+							<td>18</td>
+							<td>20</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>6</td>
+							<td>9</td>
+							<td>12</td>
+							<td>15</td>
+							<td>18</td>
+							<td>21</td>
+							<td>24</td>
+							<td>27</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>8</td>
+							<td>12</td>
+							<td>16</td>
+							<td>20</td>
+							<td>24</td>
+							<td>28</td>
+							<td>32</td>
+							<td>36</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>10</td>
+							<td>15</td>
+							<td>20</td>
+							<td>25</td>
+							<td>30</td>
+							<td>35</td>
+							<td>40</td>
+							<td>45</td>
+							<td>50</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<h2>Simple collapsable table - collapsed by default</h2>
+			<div class="col-xl-12">
+				<table id="simpleCollapsedDemoTable" class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th colspan="10">Click to collapse/expand</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>4</td>
+							<td>6</td>
+							<td>8</td>
+							<td>10</td>
+							<td>12</td>
+							<td>14</td>
+							<td>16</td>
+							<td>18</td>
+							<td>20</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>6</td>
+							<td>9</td>
+							<td>12</td>
+							<td>15</td>
+							<td>18</td>
+							<td>21</td>
+							<td>24</td>
+							<td>27</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>8</td>
+							<td>12</td>
+							<td>16</td>
+							<td>20</td>
+							<td>24</td>
+							<td>28</td>
+							<td>32</td>
+							<td>36</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>10</td>
+							<td>15</td>
+							<td>20</td>
+							<td>25</td>
+							<td>30</td>
+							<td>35</td>
+							<td>40</td>
+							<td>45</td>
+							<td>50</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<h2>Extern button</h2>
+			<div class="col-sm-10">
+				<table id="externButtonDemoTable" class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th colspan="10">Multiplication table</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>4</td>
+							<td>6</td>
+							<td>8</td>
+							<td>10</td>
+							<td>12</td>
+							<td>14</td>
+							<td>16</td>
+							<td>18</td>
+							<td>20</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>6</td>
+							<td>9</td>
+							<td>12</td>
+							<td>15</td>
+							<td>18</td>
+							<td>21</td>
+							<td>24</td>
+							<td>27</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>8</td>
+							<td>12</td>
+							<td>16</td>
+							<td>20</td>
+							<td>24</td>
+							<td>28</td>
+							<td>32</td>
+							<td>36</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>10</td>
+							<td>15</td>
+							<td>20</td>
+							<td>25</td>
+							<td>30</td>
+							<td>35</td>
+							<td>40</td>
+							<td>45</td>
+							<td>50</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm-2">
+				<button id="btnExpand">Click me!</button>
+			</div>
+		</div>
+		<div class="row">
+			<h2>Table without static width</h2>
+			<div class="col-xl-12">
+				<table id="notStaticDemoTable" class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th colspan="10">Click to collapse/expand</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>4</td>
+							<td>6</td>
+							<td>8</td>
+							<td>10</td>
+							<td>12</td>
+							<td>14</td>
+							<td>16</td>
+							<td>18</td>
+							<td>20</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>6</td>
+							<td>9</td>
+							<td>12</td>
+							<td>15</td>
+							<td>18</td>
+							<td>21</td>
+							<td>24</td>
+							<td>27</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>8</td>
+							<td>12</td>
+							<td>16</td>
+							<td>20</td>
+							<td>24</td>
+							<td>28</td>
+							<td>32</td>
+							<td>36</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>10</td>
+							<td>15</td>
+							<td>20</td>
+							<td>25</td>
+							<td>30</td>
+							<td>35</td>
+							<td>40</td>
+							<td>45</td>
+							<td>50</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
